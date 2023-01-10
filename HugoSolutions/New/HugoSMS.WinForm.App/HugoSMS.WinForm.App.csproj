@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{516B3E81-8FB3-46AD-A0C4-65476DFA69C7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HugoSMS.WinForm.App</RootNamespace>
+    <AssemblyName>HugoSMS.WinForm.App</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>stock.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NLog.4.7.6\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\DataAccess.cs" />
+    <Compile Include="Helpers\COMMONS.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Antenna.cs">
+      <DependentUpon>SmmsDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Barcode.cs">
+      <DependentUpon>SmmsDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BookOut.cs">
+      <DependentUpon>SmmsDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BookOutItem.cs">
+      <DependentUpon>SmmsDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Brand.cs">
+      <DependentUpon>SmmsDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>SmmsDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Item.cs">
+      <DependentUpon>SmmsDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Reader.cs">
+      <DependentUpon>SmmsDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SmmsDbModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmmsDbModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SmmsDbModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmmsDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SmmsDbModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmmsDbModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Stock.cs">
+      <DependentUpon>SmmsDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Store.cs">
+      <DependentUpon>SmmsDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tag.cs">
+      <DependentUpon>SmmsDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>SmmsDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Items\BookView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Items\BookView.Designer.cs">
+      <DependentUpon>BookView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\LoginView.Designer.cs">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyAccount\AccountView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MyAccount\AccountView.Designer.cs">
+      <DependentUpon>AccountView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyAccount\EditAccountView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MyAccount\EditAccountView.Designer.cs">
+      <DependentUpon>EditAccountView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stores\AddStoreView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Stores\AddStoreView.Designer.cs">
+      <DependentUpon>AddStoreView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stores\StoreView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Stores\StoreView.Designer.cs">
+      <DependentUpon>StoreView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Users\AddUserView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Users\AddUserView.Designer.cs">
+      <DependentUpon>AddUserView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Users\DeactivateUserView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Users\DeactivateUserView.Designer.cs">
+      <DependentUpon>DeactivateUserView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Users\EditUserView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Users\EditUserView.Designer.cs">
+      <DependentUpon>EditUserView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Users\UserView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Users\UserView.Designer.cs">
+      <DependentUpon>UserView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\Items\BookView.resx">
+      <DependentUpon>BookView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginView.resx">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MyAccount\AccountView.resx">
+      <DependentUpon>AccountView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MyAccount\EditAccountView.resx">
+      <DependentUpon>EditAccountView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Stores\AddStoreView.resx">
+      <DependentUpon>AddStoreView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Stores\StoreView.resx">
+      <DependentUpon>StoreView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Users\AddUserView.resx">
+      <DependentUpon>AddUserView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Users\DeactivateUserView.resx">
+      <DependentUpon>DeactivateUserView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Users\EditUserView.resx">
+      <DependentUpon>EditUserView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Users\UserView.resx">
+      <DependentUpon>UserView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Models\SmmsDbModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SmmsDbModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\SmmsDbModel.edmx.diagram">
+      <DependentUpon>SmmsDbModel.edmx</DependentUpon>
+    </None>
+    <None Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="resources\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\SmmsDbModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SmmsDbModel.edmx</DependentUpon>
+      <LastGenOutput>SmmsDbModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SmmsDbModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SmmsDbModel.edmx</DependentUpon>
+      <LastGenOutput>SmmsDbModel.cs</LastGenOutput>
+    </Content>
+    <None Include="resources\ai.png" />
+    <None Include="resources\bag.png" />
+    <None Include="resources\bansign.png" />
+    <None Include="resources\beer.png" />
+    <None Include="resources\bizcard.png" />
+    <None Include="resources\blue_folder.png" />
+    <None Include="resources\book.png" />
+    <None Include="resources\bookmark_file.png" />
+    <None Include="resources\box_full.png" />
+    <None Include="resources\box_in.png" />
+    <None Include="resources\box_out.png" />
+    <None Include="resources\bubble.png" />
+    <None Include="resources\bubbles.png" />
+    <None Include="resources\bulb_light.png" />
+    <None Include="resources\calendar.png" />
+    <None Include="resources\calendar2.png" />
+    <None Include="resources\calendar3.png" />
+    <None Include="resources\camera.png" />
+    <None Include="resources\camera0.png" />
+    <None Include="resources\camera2.png" />
+    <None Include="resources\address_book.png" />
+    <None Include="resources\address_book2.png" />
+    <None Include="resources\address_book3.png" />
+    <None Include="resources\back_arrow.png" />
+    <Content Include="resources\cancel-music.png" />
+    <None Include="resources\cat.png" />
+    <None Include="resources\cat2.png" />
+    <None Include="resources\chat.png" />
+    <None Include="resources\chat2.png" />
+    <None Include="resources\chat3.png" />
+    <None Include="resources\clock.png" />
+    <None Include="resources\clock2.png" />
+    <None Include="resources\cloud.png" />
+    <None Include="resources\cloud_down.png" />
+    <None Include="resources\cloud_sync.png" />
+    <None Include="resources\code_file.png" />
+    <None Include="resources\cog.png" />
+    <None Include="resources\cogs.png" />
+    <None Include="resources\compas.png" />
+    <None Include="resources\component.png" />
+    <None Include="resources\computer.png" />
+    <None Include="resources\cone.png" />
+    <None Include="resources\database.png" />
+    <None Include="resources\database2.png" />
+    <None Include="resources\disc.png" />
+    <None Include="resources\disc3.png" />
+    <None Include="resources\doc_folder.png" />
+    <None Include="resources\drive.png" />
+    <None Include="resources\drive2.png" />
+    <None Include="resources\earch.png" />
+    <None Include="resources\empty.png" />
+    <None Include="resources\enveloppe.png" />
+    <None Include="resources\enveloppe2.png" />
+    <None Include="resources\enveloppe3.png" />
+    <None Include="resources\enveloppe4.png" />
+    <None Include="resources\error_shield.png" />
+    <None Include="resources\error_sign.png" />
+    <None Include="resources\excel.png" />
+    <None Include="resources\excel2.png" />
+    <None Include="resources\exe_file.png" />
+    <None Include="resources\facebook.png" />
+    <None Include="resources\filezip.png" />
+    <None Include="resources\film_movie.png" />
+    <None Include="resources\filter.png" />
+    <None Include="resources\flask.png" />
+    <None Include="resources\floppy_save.png" />
+    <None Include="resources\folder.png" />
+    <None Include="resources\gamepad.png" />
+    <None Include="resources\gift.png" />
+    <None Include="resources\google+.png" />
+    <None Include="resources\green_folder.png" />
+    <None Include="resources\green_movie.png" />
+    <None Include="resources\group_profile.png" />
+    <None Include="resources\headphone.png" />
+    <None Include="resources\heart.png" />
+    <None Include="resources\house.png" />
+    <None Include="resources\house_folder.png" />
+    <None Include="resources\delete.png" />
+    <Content Include="resources\icons8-RFID Signal Filled-50.png" />
+    <Content Include="resources\icons8-RFID Signal-64.png" />
+    <Content Include="resources\icons8-RFID Signal-64SMALL.png" />
+    <None Include="resources\image.png" />
+    <None Include="resources\image_file.png" />
+    <None Include="resources\image_pci.png" />
+    <None Include="resources\indesign.png" />
+    <None Include="resources\institution.png" />
+    <Content Include="resources\Items %281%29.png" />
+    <None Include="resources\land_marker.png" />
+    <None Include="resources\layout_window.png" />
+    <None Include="resources\life_buoy.png" />
+    <None Include="resources\like.png" />
+    <None Include="resources\link_file.png" />
+    <None Include="resources\lock.png" />
+    <None Include="resources\lock2.png" />
+    <None Include="resources\lp.png" />
+    <None Include="resources\map.png" />
+    <None Include="resources\map_marker.png" />
+    <None Include="resources\map2.png" />
+    <None Include="resources\marker.png" />
+    <None Include="resources\microphone.png" />
+    <None Include="resources\money.png" />
+    <None Include="resources\monitor.png" />
+    <Content Include="resources\multiple-users-silhouette.png" />
+    <None Include="resources\music_folder.png" />
+    <None Include="resources\notepad.png" />
+    <None Include="resources\notes.png" />
+    <Content Include="resources\ok-appproval-acceptance %281%29.png" />
+    <Content Include="resources\ok-appproval-acceptance.png" />
+    <Content Include="resources\ok-like-hand-sign.png" />
+    <Content Include="resources\ok.png" />
+    <None Include="resources\paperclip.png" />
+    <None Include="resources\paperclip2.png" />
+    <None Include="resources\pdf.png" />
+    <None Include="resources\pencil.png" />
+    <None Include="resources\photoshop.png" />
+    <None Include="resources\pic_folder.png" />
+    <None Include="resources\pin.png" />
+    <Content Include="resources\play-button %281%29.png" />
+    <Content Include="resources\play-button %281%292.png" />
+    <Content Include="resources\play-button.png" />
+    <None Include="resources\powerpoint.png" />
+    <None Include="resources\premiere.png" />
+    <None Include="resources\profile.png" />
+    <None Include="resources\profile3.png" />
+    <None Include="resources\red_movie.png" />
+    <Content Include="resources\reply %281%29.png" />
+    <Content Include="resources\reply.png" />
+    <Content Include="resources\right-arrow.png" />
+    <None Include="resources\rss.png" />
+    <Content Include="resources\rubbish-bin %281%29.png" />
+    <Content Include="resources\rubbish-bin.png" />
+    <None Include="resources\schedule.png" />
+    <None Include="resources\screwdriver_wrench.png" />
+    <None Include="resources\search%27.png" />
+    <Content Include="resources\search.png" />
+    <Content Include="resources\settings-gears.png" />
+    <None Include="resources\shield.png" />
+    <Content Include="resources\sign-out-option.png" />
+    <None Include="resources\sign_add.png" />
+    <None Include="resources\sign_check.png" />
+    <None Include="resources\sign_info.png" />
+    <None Include="resources\sound_file.png" />
+    <None Include="resources\star.png" />
+    <None Include="resources\star2.png" />
+    <None Include="resources\sticky_note.png" />
+    <Content Include="resources\stock.ico" />
+    <Content Include="resources\stock.png" />
+    <Content Include="resources\stop.png" />
+    <Content Include="resources\Synertech-RFID.png" />
+    <None Include="resources\system_window.png" />
+    <None Include="resources\tablet.png" />
+    <None Include="resources\tachometer.png" />
+    <None Include="resources\tag.png" />
+    <None Include="resources\terminal.png" />
+    <None Include="resources\terminal2.png" />
+    <None Include="resources\text.png" />
+    <None Include="resources\trashcan.png" />
+    <Content Include="resources\trolley.png" />
+    <None Include="resources\turntable.png" />
+    <None Include="resources\unlock.png" />
+    <None Include="resources\unlock2.png" />
+    <Content Include="resources\user-account-box.png" />
+    <None Include="resources\user.png" />
+    <None Include="resources\user_group.png" />
+    <None Include="resources\user2.png" />
+    <None Include="resources\video_folder.png" />
+    <Content Include="resources\warehouse.png" />
+    <None Include="resources\warning_shield.png" />
+    <None Include="resources\webcam.png" />
+    <None Include="resources\window.png" />
+    <None Include="resources\window2.png" />
+    <None Include="resources\word.png" />
+    <None Include="resources\word_file.png" />
+    <None Include="resources\wrench.png" />
+    <None Include="resources\wrench2.png" />
+    <None Include="resources\youtube.png" />
+    <None Include="resources\zip_file.png" />
+    <None Include="resources\zip_file2.png" />
+    <Content Include="stock.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
