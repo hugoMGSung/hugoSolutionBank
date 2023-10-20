@@ -83,6 +83,30 @@ namespace Hsol.Kryption.Apps
             UpdatePaletteButtons();
         }
 
+        private void btnSparkleBlue_Click(object sender, EventArgs e)
+        {
+            kryptonManager.GlobalPaletteMode = PaletteModeManager.SparkleBlue;
+            UpdatePaletteButtons();
+        }
+
+        private void btnSparkleOrange_Click(object sender, EventArgs e)
+        {
+            kryptonManager.GlobalPaletteMode = PaletteModeManager.SparkleOrange;
+            UpdatePaletteButtons();
+        }
+
+        private void btnSparklePurple_Click(object sender, EventArgs e)
+        {
+            kryptonManager.GlobalPaletteMode = PaletteModeManager.SparklePurple;
+            UpdatePaletteButtons();
+        }
+
+        private void btnSystem_Click(object sender, EventArgs e)
+        {
+            kryptonManager.GlobalPaletteMode = PaletteModeManager.ProfessionalSystem;
+            UpdatePaletteButtons();
+        }
+
         private void UpdatePaletteButtons()
         {
             btn365Blue.Checked = (kryptonManager.GlobalPaletteMode == PaletteModeManager.Office365Blue);
@@ -96,8 +120,16 @@ namespace Hsol.Kryption.Apps
             btn2007Blue.Checked = (kryptonManager.GlobalPaletteMode == PaletteModeManager.Office2007Blue);
             btn2007Silver.Checked = (kryptonManager.GlobalPaletteMode == PaletteModeManager.Office2007Silver);
             btn2007Black.Checked = (kryptonManager.GlobalPaletteMode == PaletteModeManager.Office2007Black);
+
+            btnSparkleBlue.Checked = (kryptonManager.GlobalPaletteMode == PaletteModeManager.SparkleBlue);
+            btnSparkleOrange.Checked = (kryptonManager.GlobalPaletteMode == PaletteModeManager.SparkleOrange);
+            btnSparklePurple.Checked = (kryptonManager.GlobalPaletteMode == PaletteModeManager.SparklePurple);
+
+            btnSystem.Checked = (kryptonManager.GlobalPaletteMode == PaletteModeManager.ProfessionalSystem);
         }
 
+
         #endregion `팔레트 영역`
+
     }
 }

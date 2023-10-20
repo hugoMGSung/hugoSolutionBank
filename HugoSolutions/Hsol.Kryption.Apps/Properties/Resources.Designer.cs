@@ -103,6 +103,26 @@ namespace Hsol.Kryption.Apps.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_system_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_system_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_system_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_system_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap palette16 {
             get {
                 object obj = ResourceManager.GetObject("palette16", resourceCulture);
@@ -116,6 +136,36 @@ namespace Hsol.Kryption.Apps.Properties {
         internal static System.Drawing.Bitmap palette32 {
             get {
                 object obj = ResourceManager.GetObject("palette32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap sparkle16 {
+            get {
+                object obj = ResourceManager.GetObject("sparkle16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap sparkle32 {
+            get {
+                object obj = ResourceManager.GetObject("sparkle32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap starts {
+            get {
+                object obj = ResourceManager.GetObject("starts", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
